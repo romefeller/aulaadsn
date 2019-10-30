@@ -12,7 +12,7 @@ import Database.Persist.Postgresql
 
 getHomeR :: Handler Html
 getHomeR = do 
-    defaultLayout $
+    defaultLayout $ do 
         -- remoto
         addScriptRemote "https://code.jquery.com/jquery-3.4.1.min.js"
         -- esta no projeto

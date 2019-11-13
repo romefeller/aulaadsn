@@ -147,7 +147,7 @@ appMain = do
     app <- makeApplication foundation
     runTLS
         (tlsSettingsChain (cp "cert.pem") [cp "chain.pem"] (cp "privkey.pem"))
-        (setPort 443 settings)
+        (warpSettings foundation)
         app
 
 

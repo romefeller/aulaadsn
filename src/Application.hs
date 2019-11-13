@@ -138,22 +138,17 @@ develMain = develMainHelper getApplicationDev
 -- | The @main@ function for an executable running this site.
 appMain :: IO ()
 appMain = do
-    -- Get the settings from all relevant sources
+    let cp s = "/etc/letsencrypt/live/aulahaskell.ml/" ++ s
     settings <- loadYamlSettingsArgs
-        -- fall back to compile-time values, set to [] to require values at runtime
         [configSettingsYmlValue]
-
-        -- allow environment variables to override
         useEnv
-
-    -- Generate the foundation from the settings
     foundation <- makeFoundation settings
-
-    -- Generate a WAI Application from the foundation
     app <- makeApplication foundation
+    runTLS
+        (tlsSettingsChain (cp "cert.pem") [cp "chain.pem"] (cp "privkey.pem"))
+        (setPort 443 settings)
+        app
 
-    -- Run the application with Warp
-    runSettings (warpSettings foundation) app
 
 
 --------------------------------------------------------------

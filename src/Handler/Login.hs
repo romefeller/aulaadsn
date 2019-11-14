@@ -51,8 +51,15 @@ postEntrarR = do
                     |]
                     redirect EntrarR
                 Just (Entity _ usu) -> do 
-                    setSession "_NOME" (usuarioNome usu)
-                    redirect EntrarR
+                    if (usuarioSenha usu == senha) then do
+                        setSession "_NOME" (usuarioNome usu)
+                        redirect EntrarR
+                    else do 
+                       setMessage [shamlet|
+                        <div>
+                            Senha INCORRETA!
+                        |]
+                        redirect EntrarR 
         _ -> redirect HomeR
 
 postSairR :: Handler Html 

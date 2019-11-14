@@ -55,7 +55,7 @@ postEntrarR = do
                         setSession "_NOME" (usuarioNome usu)
                         redirect EntrarR
                     else do 
-                       setMessage [shamlet|
+                        setMessage [shamlet|
                             <div>
                                 Senha INCORRETA!
                         |]

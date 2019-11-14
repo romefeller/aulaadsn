@@ -56,8 +56,8 @@ postEntrarR = do
                         redirect EntrarR
                     else do 
                        setMessage [shamlet|
-                        <div>
-                            Senha INCORRETA!
+                            <div>
+                                Senha INCORRETA!
                         |]
                         redirect EntrarR 
         _ -> redirect HomeR

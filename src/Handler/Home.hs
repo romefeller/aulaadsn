@@ -32,6 +32,7 @@ getHomeR = do
         addScriptRemote "https://code.jquery.com/jquery-3.4.1.min.js"
         -- esta no projeto
         addStylesheet (StaticR css_bootstrap_css)
+        sess <- lookupSession "_NOME"
         toWidgetHead [julius|
             function ola(){
                 alert("OLA MUNDO");
@@ -60,6 +61,17 @@ getHomeR = do
                 <li>
                     <a href=@{Page2R}>
                         Pagina 2
+                
+                $maybe nome <- sess
+                    <li>
+                        <div>
+                            Ola #{nome}
+                        <form method=post action=@{SairR}>
+                            <input type="submit" value="Sair">
+                $nothing
+                    <li>
+                        <div>
+                            convidado
             
             <img src=@{StaticR citeg_jpg}>
             

@@ -16,7 +16,7 @@ import Database.Persist.Postgresql
 formLogin :: Form (Text, Text)
 formLogin = renderBootstrap $ (,)
     <$> areq emailField "E-mail: " Nothing
-    <*> areq passwordField "Digite Novamente: " Nothing
+    <*> areq passwordField "Senha: " Nothing
 
 getEntrarR :: Handler Html
 getEntrarR = do 
@@ -53,7 +53,7 @@ postEntrarR = do
                 Just (Entity _ usu) -> do 
                     if (usuarioSenha usu == senha) then do
                         setSession "_NOME" (usuarioNome usu)
-                        redirect EntrarR
+                        redirect HomeR
                     else do 
                         setMessage [shamlet|
                             <div>

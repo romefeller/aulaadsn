@@ -50,7 +50,7 @@ postEntrarR = do
                             E-mail N ENCONTRADO!
                     |]
                     redirect EntrarR
-                Just usu -> do 
+                Just (Entity _ usu) -> do 
                     setSession "_NOME" (usuarioNome usu)
                     redirect EntrarR
         _ -> redirect HomeR

@@ -27,6 +27,7 @@ formAtua :: Form Atua
 formAtua = renderBootstrap $ Atua
     <$> areq (selectField serieCB) "Serie: " Nothing
     <*> areq (selectField atorCB) "Ator: " Nothing
+    <*> areq intField "Ano: " Nothing
 
     
 getAtuaR :: Handler Html

@@ -11,3 +11,5 @@
 /entrar   EntrarR  GET POST
 /sair     SairR    POST
 /admin    AdminR   GET
+
+/ator     AtorR    GET POST

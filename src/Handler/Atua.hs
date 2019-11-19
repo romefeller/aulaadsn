@@ -63,9 +63,9 @@ postAtuaR = do
 
 getElencoR :: SerieId -> Handler Html
 getElencoR serieid = do 
-    let sql = "SELECT ??,??,?? FROM serie
-          \ INNER JOIN atua ON atua.serieid = serie.id
-          \ INNER JOIN ator ON atua.atorid = ator.id
+    let sql = "SELECT ??,??,?? FROM serie \
+          \ INNER JOIN atua ON atua.serieid = serie.id \
+          \ INNER JOIN ator ON atua.atorid = ator.id \
           \ WHERE serie.id = ?"
     serie <- runDB $ get404 serieid
     atores <- runDB $ rawSql sql [toPersistValue serieid]

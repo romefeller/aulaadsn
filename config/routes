@@ -14,3 +14,5 @@
 
 /ator     AtorR    GET POST
 /serie    SerieR   GET POST
+
+/atua     AtuaR    GET POST

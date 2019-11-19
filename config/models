@@ -4,7 +4,7 @@ Usuario
     nome  Text
     email Text
     senha Text
-    UniqueEmailRest email
+    UniqueEmailIx email
     deriving Show
 
 Serie

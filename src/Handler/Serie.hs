@@ -47,7 +47,7 @@ postSerieR = do
                 <div>
                     SERIE INCLUIDO
             |]
-                redirect SerieR
+            redirect SerieR
         _ -> redirect HomeR
 
 

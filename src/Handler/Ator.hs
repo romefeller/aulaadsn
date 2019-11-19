@@ -46,7 +46,7 @@ postAtorR = do
                 <div>
                     ATOR INCLUIDO
             |]
-                redirect AtorR
+            redirect AtorR
         _ -> redirect HomeR
 
 

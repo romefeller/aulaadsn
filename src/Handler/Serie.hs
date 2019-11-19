@@ -14,7 +14,7 @@ import Database.Persist.Postgresql
 
 -- renderDivs
 formSerie :: Form Serie 
-formAtor = renderBootstrap $ Serie
+formSerie = renderBootstrap $ Serie
     <$> areq textField "Nome: " Nothing
     <*> areq intField  "Ano: " Nothing
     <*> areq textField "Pais: " Nothing

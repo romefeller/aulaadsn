@@ -13,3 +13,4 @@
 /admin    AdminR   GET
 
 /ator     AtorR    GET POST
+/serie    SerieR   GET POST

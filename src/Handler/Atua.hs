@@ -68,7 +68,7 @@ getElencoR serieid = do
           \ INNER JOIN ator ON atua.atorid = ator.id \
           \ WHERE serie.id = ?"
     serie <- runDB $ get404 serieid
-    atores <- runDB $ rawSql sql [toPersistValue . entityKey $ serieid]
+    atores <- runDB $ rawSql sql [serieid]
     defaultLayout $ do 
         [whamlet|
             <h1>

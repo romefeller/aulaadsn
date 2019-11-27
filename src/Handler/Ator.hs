@@ -9,7 +9,7 @@ module Handler.Ator where
 import Import
 import Text.Lucius
 import Text.Julius
---import Network.HTTP.Types.Status
+--import Network.HTTP.Types.Stactus
 import Database.Persist.Postgresql
 
 -- renderDivs

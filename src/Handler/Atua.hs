@@ -29,7 +29,6 @@ formAtua = renderBootstrap $ Atua
     <*> areq (selectField atorCB) "Ator: " Nothing
     <*> areq intField "Ano: " Nothing
 
-    
 getAtuaR :: Handler Html
 getAtuaR = do 
     (widget,_) <- generateFormPost formAtua
